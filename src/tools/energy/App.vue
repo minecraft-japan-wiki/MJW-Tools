@@ -73,7 +73,7 @@ module.exports = defineComponent({
 </script>
 
 <template>
-	<tool-field-base>
+	<tool-field-base class="mjw-tools-energy">
 		<template #heading>{{ $i18n('mjw-tools-energy-title') }}</template>
 
 		<cdx-field class="mjw-tools-energy-fieldset" :is-fieldset="true">
@@ -166,41 +166,43 @@ module.exports = defineComponent({
 </template>
 
 <style>
-.cdx-field {
-	margin-top: 0;
-}
+.mjw-tools-energy {
+	.cdx-field {
+		margin-top: 0;
+	}
 
-.cdx-text-input {
-	font-family: monospace;
-	width: 84px;
-}
+	.mjw-tools-energy .cdx-text-input {
+		font-family: monospace;
+		width: 84px;
+	}
 
-.mjw-tools-energy-fieldset .cdx-field__control {
-	display: flex;
-	flex-direction: row;
-	gap: 0.25rem;
-	align-items: flex-end;
-}
+	.mjw-tools-energy-fieldset .cdx-field__control {
+		display: flex;
+		flex-direction: row;
+		gap: 0.25rem;
+		align-items: flex-end;
+	}
 
-.mjw-tools-text-input {
-	text-align: center;
-	min-width: 4rem;
-}
+	.mjw-tools-text-input {
+		text-align: center;
+		min-width: 4rem;
+	}
 
-.mjw-tools-energy-text-input {
-	width: 100%;
-	resize: none;
-}
+	.mjw-tools-energy-text-input {
+		width: 100%;
+		resize: none;
+	}
 
-.mjw-tools-input-label {
-	min-width: 1.3rem;
-	text-align: right;
-}
+	.mjw-tools-input-label {
+		min-width: 1.3rem;
+		text-align: right;
+	}
 
-.mjw-tools-input-field {
-	display: flex;
-	flex-direction: row;
-	align-items: flex-end;
-	gap: 0.25rem;
+	.mjw-tools-input-field {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+		gap: 0.25rem;
+	}
 }
 </style>

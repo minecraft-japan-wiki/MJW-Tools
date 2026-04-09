@@ -52,7 +52,7 @@ module.exports = defineComponent({
 </script>
 
 <template>
-	<tool-field-base>
+	<tool-field-base class="mjw-tools-seed">
 		<template #heading>{{ $i18n('mjw-tools-seed-title') }}</template>
 
 		<div class="mjw-tools-seed-outer">
@@ -96,9 +96,11 @@ module.exports = defineComponent({
 </template>
 
 <style>
-.mjw-tools-seed-outer {
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
+.mjw-tools-seed {
+	.mjw-tools-seed-outer {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
 }
 </style>

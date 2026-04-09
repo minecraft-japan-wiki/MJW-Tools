@@ -169,20 +169,20 @@ module.exports = defineComponent({
 </script>
 
 <template>
-	<tool-field-base>
+	<tool-field-base class="mjw-tools-time">
 		<template #heading>{{ $i18n('mjw-tools-time-title') }}</template>
 
-		<div class="mjw-tools-outer">
-			<div class="mjw-tools-inner">
+		<div class="mjw-tools-time-outer">
+			<div class="mjw-tools-time-inner">
 				<cdx-field
 					class="mjw-tools-input-item"
 					:is-fieldset="true"
 					:hide-label="true"
 				>
-					<div class="mjw-tools-input-field">
+					<div class="mjw-tools-time-input-field">
 						<cdx-text-input
 							v-model="gt"
-							class="mjw-tools-text-input"
+							class="mjw-tools-time-text-input"
 							id="mjw-tools-time-gt"
 							input-type="number"
 						/>
@@ -194,7 +194,7 @@ module.exports = defineComponent({
 
 				<div style="height: 100%;">
 					<div
-						class="mjw-tools-input-symbol mjw-tools-mjw-tools-input-symbol-large"
+						class="mjw-tools-time-input-symbol mjw-tools-time-input-symbol--large"
 					>
 						=
 					</div>
@@ -205,10 +205,10 @@ module.exports = defineComponent({
 					:is-fieldset="true"
 					:hide-label="true"
 				>
-					<div class="mjw-tools-input-field">
+					<div class="mjw-tools-time-input-field">
 						<cdx-text-input
 							v-model="rt"
-							class="mjw-tools-text-input"
+							class="mjw-tools-time-text-input"
 							id="mjw-tools-time-rt"
 							input-type="number"
 						/>
@@ -223,16 +223,16 @@ module.exports = defineComponent({
 		<cdx-accordion open>
 			<template #title>{{ $i18n('mjw-tools-time-real-time') }}</template>
 
-			<div class="mjw-tools-inner-item">
+			<div class="mjw-tools-time-inner-item">
 				<cdx-field
 					class="mjw-tools-input-item"
 					:is-fieldset="true"
 					:hide-label="true"
 				>
-					<div id="day" class="mjw-tools-input-field">
+					<div id="day" class="mjw-tools-time-input-field">
 						<cdx-text-input
 							v-model="day"
-							class="mjw-tools-text-input"
+							class="mjw-tools-time-text-input"
 							id="mjw-tools-time-rday"
 							input-type="number"
 						/>
@@ -242,17 +242,17 @@ module.exports = defineComponent({
 					</template>
 				</cdx-field>
 
-				<div class="mjw-tools-input-symbol">:</div>
+				<div class="mjw-tools-time-input-symbol">:</div>
 
 				<cdx-field
 					class="mjw-tools-input-item"
 					:is-fieldset="true"
 					:hide-label="true"
 				>
-					<div id="hour" class="mjw-tools-input-field">
+					<div id="hour" class="mjw-tools-time-input-field">
 						<cdx-text-input
 							v-model="hour"
-							class="mjw-tools-text-input"
+							class="mjw-tools-time-text-input"
 							id="mjw-tools-time-rhour"
 							input-type="number"
 						/>
@@ -262,17 +262,17 @@ module.exports = defineComponent({
 					</template>
 				</cdx-field>
 
-				<div class="mjw-tools-input-symbol">:</div>
+				<div class="mjw-tools-time-input-symbol">:</div>
 
 				<cdx-field
 					class="mjw-tools-input-item"
 					:is-fieldset="true"
 					:hide-label="true"
 				>
-					<div id="minute" class="mjw-tools-input-field">
+					<div id="minute" class="mjw-tools-time-input-field">
 						<cdx-text-input
 							v-model="minute"
-							class="mjw-tools-text-input"
+							class="mjw-tools-time-text-input"
 							id="mjw-tools-time-rminute"
 							input-type="number"
 						/>
@@ -282,17 +282,17 @@ module.exports = defineComponent({
 					</template>
 				</cdx-field>
 
-				<div class="mjw-tools-input-symbol">:</div>
+				<div class="mjw-tools-time-input-symbol">:</div>
 
 				<cdx-field
 					class="mjw-tools-input-item"
 					:is-fieldset="true"
 					:hide-label="true"
 				>
-					<div id="second" class="mjw-tools-input-field">
+					<div id="second" class="mjw-tools-time-input-field">
 						<cdx-text-input
 							v-model="second"
-							class="mjw-tools-text-input"
+							class="mjw-tools-time-text-input"
 							id="mjw-tools-time-rsecond"
 							input-type="number"
 						/>
@@ -302,17 +302,17 @@ module.exports = defineComponent({
 					</template>
 				</cdx-field>
 
-				<div class="mjw-tools-input-symbol">.</div>
+				<div class="mjw-tools-time-input-symbol">.</div>
 
 				<cdx-field
 					class="mjw-tools-input-item"
 					:is-fieldset="true"
 					:hide-label="true"
 				>
-					<div id="millisecond" class="mjw-tools-input-field">
+					<div id="millisecond" class="mjw-tools-time-input-field">
 						<cdx-text-input
 							v-model="millisecond"
-							class="mjw-tools-text-input"
+							class="mjw-tools-time-text-input"
 							id="mjw-tools-time-rmillisecond"
 							input-type="number"
 						/>
@@ -329,16 +329,16 @@ module.exports = defineComponent({
 				>{{ $i18n('mjw-tools-time-ingame-time') }}</template
 			>
 
-			<div class="mjw-tools-inner-item">
+			<div class="mjw-tools-time-inner-item">
 				<cdx-field
 					class="mjw-tools-input-item"
 					:is-fieldset="true"
 					:hide-label="true"
 				>
-					<div id="day" class="mjw-tools-input-field">
+					<div id="day" class="mjw-tools-time-input-field">
 						<cdx-text-input
 							v-model="inGameDay"
-							class="mjw-tools-text-input"
+							class="mjw-tools-time-text-input"
 							id="mjw-tools-time-day"
 							input-type="number"
 						/>
@@ -348,17 +348,17 @@ module.exports = defineComponent({
 					</template>
 				</cdx-field>
 
-				<div class="mjw-tools-input-symbol">:</div>
+				<div class="mjw-tools-time-input-symbol">:</div>
 
 				<cdx-field
 					class="mjw-tools-input-item"
 					:is-fieldset="true"
 					:hide-label="true"
 				>
-					<div id="hour" class="mjw-tools-input-field">
+					<div id="hour" class="mjw-tools-time-input-field">
 						<cdx-text-input
 							v-model="inGameHour"
-							class="mjw-tools-text-input"
+							class="mjw-tools-time-text-input"
 							id="mjw-tools-time-hour"
 							input-type="number"
 						/>
@@ -368,17 +368,17 @@ module.exports = defineComponent({
 					</template>
 				</cdx-field>
 
-				<div class="mjw-tools-input-symbol">:</div>
+				<div class="mjw-tools-time-input-symbol">:</div>
 
 				<cdx-field
 					class="mjw-tools-input-item"
 					:is-fieldset="true"
 					:hide-label="true"
 				>
-					<div id="minute" class="mjw-tools-input-field">
+					<div id="minute" class="mjw-tools-time-input-field">
 						<cdx-text-input
 							v-model="inGameMinute"
-							class="mjw-tools-text-input"
+							class="mjw-tools-time-text-input"
 							id="mjw-tools-time-minute"
 							input-type="number"
 						/>
@@ -388,17 +388,17 @@ module.exports = defineComponent({
 					</template>
 				</cdx-field>
 
-				<div class="mjw-tools-input-symbol">:</div>
+				<div class="mjw-tools-time-input-symbol">:</div>
 
 				<cdx-field
 					class="mjw-tools-input-item"
 					:is-fieldset="true"
 					:hide-label="true"
 				>
-					<div id="second" class="mjw-tools-input-field">
+					<div id="second" class="mjw-tools-time-input-field">
 						<cdx-text-input
 							v-model="inGameSecond"
-							class="mjw-tools-text-input"
+							class="mjw-tools-time-text-input"
 							id="mjw-tools-time-second"
 							input-type="number"
 						/>
@@ -408,17 +408,17 @@ module.exports = defineComponent({
 					</template>
 				</cdx-field>
 
-				<div class="mjw-tools-input-symbol">.</div>
+				<div class="mjw-tools-time-input-symbol">.</div>
 
 				<cdx-field
 					class="mjw-tools-input-item"
 					:is-fieldset="true"
 					:hide-label="true"
 				>
-					<div id="millisecond" class="mjw-tools-input-field">
+					<div id="millisecond" class="mjw-tools-time-input-field">
 						<cdx-text-input
 							v-model="inGameMillisecond"
-							class="mjw-tools-text-input"
+							class="mjw-tools-time-text-input"
 							id="mjw-tools-time-millisecond"
 							input-type="number"
 						/>
@@ -433,13 +433,13 @@ module.exports = defineComponent({
 		<cdx-accordion>
 			<template #title>{{ $i18n('mjw-tools-time-running-at') }}</template>
 
-			<div class="mjw-tools-inner">
+			<div class="mjw-tools-time-inner">
 				<cdx-field :is-fieldset="true" :hide-label="true">
 					<div class="mjw-tools-input-item">
-						<div id="tps" class="mjw-tools-input-field">
+						<div id="tps" class="mjw-tools-time-input-field">
 							<cdx-text-input
 								v-model="tps"
-								class="mjw-tools-text-input"
+								class="mjw-tools-time-text-input"
 								input-type="number"
 								id="mjw-tools-time-tps"
 								min="0"
@@ -458,7 +458,7 @@ module.exports = defineComponent({
 
 				<div style="height: 100%;">
 					<div
-						class="mjw-tools-input-symbol mjw-tools-mjw-tools-input-symbol-large"
+						class="mjw-tools-time-input-symbol mjw-tools-time-input-symbol--large"
 					>
 						=
 					</div>
@@ -466,10 +466,10 @@ module.exports = defineComponent({
 
 				<cdx-field :is-fieldset="true" :hide-label="true">
 					<div class="mjw-tools-input-item">
-						<div id="tps" class="mjw-tools-input-field">
+						<div id="tps" class="mjw-tools-time-input-field">
 							<cdx-text-input
 								v-model="mspt"
-								class="mjw-tools-text-input"
+								class="mjw-tools-time-text-input"
 								input-type="number"
 								id="mjw-tools-time-mspt"
 							/>
@@ -490,64 +490,66 @@ module.exports = defineComponent({
 </template>
 
 <style>
-.mjw-tools-outer {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	gap: 0.5rem;
-}
+.mjw-tools-time {
+	.mjw-tools-time-outer {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
 
-.mjw-tools-inner {
-	display: flex;
-	align-items: flex-start;
-	gap: 0.25rem;
-}
+	.mjw-tools-time-inner {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.25rem;
+	}
 
-.mjw-tools-inner-item {
-	display: flex;
-	overflow-x: auto;
-	overflow-y: hidden;
-	align-items: center;
-	gap: 0.25rem;
-}
+	.mjw-tools-time-inner-item {
+		display: flex;
+		overflow-x: auto;
+		overflow-y: hidden;
+		align-items: center;
+		gap: 0.25rem;
+	}
 
-.mjw-tools-text-input {
-	text-align: center;
-	min-width: 4rem;
-}
+	.mjw-tools-time-text-input {
+		text-align: center;
+		min-width: 4rem;
+	}
 
-.mjw-tools-inner .cdx-field__control {
-	display: flex;
-	gap: 0.25rem;
-	flex-direction: row;
-}
+	.mjw-tools-time-inner .cdx-field__control {
+		display: flex;
+		gap: 0.25rem;
+		flex-direction: row;
+	}
 
-.cdx-field {
-	margin-top: 0;
-}
+	.cdx-field {
+		margin-top: 0;
+	}
 
-.cdx-text-input {
-	font-family: monospace;
-	width: 84px;
-	resize: horizontal;
-}
+	.cdx-text-input {
+		font-family: monospace;
+		width: 84px;
+		resize: horizontal;
+	}
 
-.mjw-tools-input-symbol {
-	font-family: monospace;
-	vertical-align: text-bottom;
-	height: 32px;
-	line-height: 32px;
-}
+	.mjw-tools-time-input-symbol {
+		font-family: monospace;
+		vertical-align: text-bottom;
+		height: 32px;
+		line-height: 32px;
+	}
 
-.mjw-tools-mjw-tools-input-symbol-large {
-	font-size: 1.25rem;
-	margin-right: 0.25rem;
-	margin-left: 0.25rem;
-}
+	.mjw-tools-time-input-symbol--large {
+		font-size: 1.25rem;
+		margin-right: 0.25rem;
+		margin-left: 0.25rem;
+	}
 
-.mjw-tools-input-field {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	.mjw-tools-time-input-field {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 }
 </style>
