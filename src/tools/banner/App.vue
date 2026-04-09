@@ -41,7 +41,7 @@ const {
 	cdxIconLink,
 } = require("../icons.json")
 const ToolFieldBase = require("./FieldBase.vue")
-const { BannerPopup } = require("./BannerPopup.vue")
+const BannerPopup = require("./BannerPopup.vue")
 const Messages = require("./i18n.json")
 const api = new mw.Api()
 const loadedImageUrls = {}
@@ -682,7 +682,7 @@ module.exports = defineComponent({
 </script>
 
 <template>
-	<tool-field-base>
+	<tool-field-base class="mjw-tools-banner">
 		<template #heading> {{ $i18n('mjw-tools-banner-title') }} </template>
 		<div class="mjw-tools-banner-outer">
 			<div class="mjw-tools-banner-canvas">
@@ -922,135 +922,137 @@ module.exports = defineComponent({
 </template>
 
 <style>
-.mjw-tools-banner-outer {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	align-items: center;
-	gap: 0.375rem;
-}
-
-.mjw-tools-banner-canvas {
-	display: flex;
-	flex-direction: column;
-	gap: 0.375rem;
-	align-items: center;
-}
-
-.mjw-tools-banner-canvas > canvas {
-	height: 200px;
-}
-
-@media (min-width: 48rem) {
+.mjw-tools-banner {
 	.mjw-tools-banner-outer {
-		align-items: stretch;
-		flex-direction: row;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.375rem;
+	}
+
+	.mjw-tools-banner-canvas {
+		display: flex;
+		flex-direction: column;
+		gap: 0.375rem;
+		align-items: center;
 	}
 
 	.mjw-tools-banner-canvas > canvas {
-		height: 400px;
+		height: 200px;
 	}
-}
 
-.mjw-tools-banner-base-color-select {
-	width: 100%;
-}
+	@media (min-width: 48rem) {
+		.mjw-tools-banner-outer {
+			align-items: stretch;
+			flex-direction: row;
+		}
 
-.mjw-tools-banner-canvas--type-buttons {
-	display: flex;
-	width: 100%;
-}
+		.mjw-tools-banner-canvas > canvas {
+			height: 400px;
+		}
+	}
 
-.mjw-tools-banner-canvas--type-buttons > * {
-	flex-grow: 1;
-}
+	.mjw-tools-banner-base-color-select {
+		width: 100%;
+	}
 
-.mjw-tools-banner-list {
-	display: flex;
-	flex: 1;
-	flex-direction: column;
-	gap: 0.375rem;
-	width: 100%;
-	overflow-x: auto;
-}
+	.mjw-tools-banner-canvas--type-buttons {
+		display: flex;
+		width: 100%;
+	}
 
-.mjw-tools-banner-list-inner {
-	flex: 1;
-	max-height: 400px;
-	max-width: 100%;
-	overflow-x: auto;
-}
+	.mjw-tools-banner-canvas--type-buttons > * {
+		flex-grow: 1;
+	}
 
-.mjw-tools-banner--popup {
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-}
+	.mjw-tools-banner-list {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		gap: 0.375rem;
+		width: 100%;
+		overflow-x: auto;
+	}
 
-.mjw-tools-banner-list--select {
-	width: 100%;
-}
-.mjw-tools-banner-list--select-item {
-	display: flex;
-	align-items: center;
-}
+	.mjw-tools-banner-list-inner {
+		flex: 1;
+		max-height: 400px;
+		max-width: 100%;
+		overflow-x: auto;
+	}
 
-.mjw-tools-banner-list--required-pattern {
-	display: flex;
-	align-items: center;
-	position: relative;
-}
+	.mjw-tools-banner--popup {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+	}
 
-.mjw-tools-banner-list--item-buttons {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-}
+	.mjw-tools-banner-list--select {
+		width: 100%;
+	}
+	.mjw-tools-banner-list--select-item {
+		display: flex;
+		align-items: center;
+	}
 
-.mjw-tools-banner-actions {
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
-}
+	.mjw-tools-banner-list--required-pattern {
+		display: flex;
+		align-items: center;
+		position: relative;
+	}
 
-.mjw-tools-banner-action-group {
-	display: flex;
-	flex-direction: row;
-	gap: 0.5rem;
-	flex-wrap: wrap;
-}
+	.mjw-tools-banner-list--item-buttons {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+	}
 
-.mjw-tools-banner-java-command {
-	display: flex;
-	width: 100%;
-}
-.mjw-tools-banner-java-command > .cdx-text-input {
-	flex-grow: 1;
-}
+	.mjw-tools-banner-actions {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
 
-.cdx-select-vue__handle {
-	min-width: 175px;
-	display: flex;
-	align-items: center;
-	height: 36px;
-}
+	.mjw-tools-banner-action-group {
+		display: flex;
+		flex-direction: row;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+	}
 
-.cdx-table {
-	display: flex;
-	flex-direction: column;
-	background-color: var(--background-color-base);
-}
+	.mjw-tools-banner-java-command {
+		display: flex;
+		width: 100%;
+	}
+	.mjw-tools-banner-java-command > .cdx-text-input {
+		flex-grow: 1;
+	}
 
-.cdx-table__table-wrapper {
-	flex: 1;
-	overflow: visible;
-	overflow-x: auto;
-}
+	.cdx-select-vue__handle {
+		min-width: 175px;
+		display: flex;
+		align-items: center;
+		height: 36px;
+	}
 
-.cdx-table__header {
-	position: sticky;
-	top: 0;
-	background-color: var(--background-color-base);
-	z-index: var(--z-index-above-content);
+	.cdx-table {
+		display: flex;
+		flex-direction: column;
+		background-color: var(--background-color-base);
+	}
+
+	.cdx-table__table-wrapper {
+		flex: 1;
+		overflow: visible;
+		overflow-x: auto;
+	}
+
+	.cdx-table__header {
+		position: sticky;
+		top: 0;
+		background-color: var(--background-color-base);
+		z-index: var(--z-index-above-content);
+	}
 }
 </style>

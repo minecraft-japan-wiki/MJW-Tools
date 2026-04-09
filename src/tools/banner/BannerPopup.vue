@@ -20,14 +20,16 @@ module.exports = defineComponent({
 		},
 	},
 	setup(props) {
-		const button = useTemplateRef("button")
+		const buttonRef = useTemplateRef("buttonRef")
 		const popupOpen = ref(false)
+		const icon = ref(props.icon)
+		const type = ref(props.type)
 		const slots = useSlots()
 
 		return {
-			icon: props.icon,
-			type: props.type,
-			button,
+			icon,
+			type,
+			buttonRef,
 			popupOpen,
 			slots,
 		}
@@ -36,29 +38,37 @@ module.exports = defineComponent({
 </script>
 
 <template>
-	<cdx-button
-		ref="button"
-		weight="quiet"
-		:aria-label="$i18n(`mjw-tools-banner-${type}`)"
-		@click="popupOpen = !popupOpen"
-	>
-		<cdx-icon size="small" :icon="icon" :class="`${type}-icon`"></cdx-icon>
-	</cdx-button>
-	<cdx-popover
-		v-model:open="popupOpen"
-		:anchor="button"
-		placement="top-start"
-	>
-		<slot></slot>
-	</cdx-popover>
+	<div class="mjw-tools-banner-popup">
+		<cdx-button
+			ref="buttonRef"
+			weight="quiet"
+			:aria-label="$i18n(`mjw-tools-banner-${type}`)"
+			@click="popupOpen = !popupOpen"
+		>
+			<cdx-icon
+				size="small"
+				:icon="icon"
+				:class="`${type}-icon`"
+			></cdx-icon>
+		</cdx-button>
+		<cdx-popover
+			v-model:open="popupOpen"
+			:anchor="buttonRef"
+			placement="top-start"
+		>
+			<slot></slot>
+		</cdx-popover>
+	</div>
 </template>
 
 <style>
-.cdx-icon.warning-icon {
-	color: var(--color-warning);
-}
+.mjw-tools-banner-popup {
+	.cdx-icon.warning-icon {
+		color: var(--color-warning);
+	}
 
-.cdx-icon.error-icon {
-	color: var(--color-error);
+	.cdx-icon.error-icon {
+		color: var(--color-error);
+	}
 }
 </style>
