@@ -1,0 +1,13 @@
+{
+	"editor.codeActionsOnSave": {
+		"source.organizeImports.biome": "explicit",
+		"source.quickfix.biome": "explicit",
+		"source.fixAll.biome": "explicit"
+	},
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "biomejs.biome",
+	"npm.packageManager": "pnpm",
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	}
+}

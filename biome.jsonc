@@ -1,0 +1,101 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.4.9/schema.json",
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
+	"files": {
+		"ignoreUnknown": true,
+		"includes": ["**", "!node_modules", "!.next", "!dist", "!build"]
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab",
+		"indentWidth": 4
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"suspicious": {
+				"noUnknownAtRules": "off",
+				"noExplicitAny": "warn",
+				"noArrayIndexKey": "info"
+			},
+			"correctness": {
+				"noUnknownProperty": "off",
+				"useExhaustiveDependencies": "warn",
+				"useJsxKeyInIterable": "info",
+				"noUnknownMediaFeatureName": "warn"
+			},
+			"a11y": {
+				"useAltText": "info",
+				"noSvgWithoutTitle": "info",
+				"noStaticElementInteractions": "info",
+				"useValidAnchor": "warn",
+				"useSemanticElements": "info",
+				"useHtmlLang": "info",
+				"noNoninteractiveElementToInteractiveRole": "info",
+				"useFocusableInteractive": "info"
+			},
+			"security": {
+				"noDangerouslySetInnerHtml": "warn"
+			},
+			"complexity": {
+				"noImportantStyles": "info"
+			}
+		},
+		"domains": {
+			"next": "recommended",
+			"react": "recommended"
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"jsxQuoteStyle": "double",
+			"quoteProperties": "asNeeded",
+			"trailingCommas": "all",
+			"semicolons": "asNeeded",
+			"arrowParentheses": "always",
+			"quoteStyle": "double"
+		}
+	},
+	"html": {
+		"experimentalFullSupportEnabled": true,
+		"linter": {
+			"enabled": true
+		},
+		"formatter": {
+			"enabled": true
+		}
+	},
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
+	},
+	"overrides": [
+		{
+			"includes": ["**/*.svelte", "**/*.astro", "**/*.vue"],
+			"linter": {
+				"rules": {
+					"style": {
+						"useConst": "off",
+						"useImportType": "off"
+					},
+					"correctness": {
+						"noUnusedVariables": "off",
+						"noUnusedImports": "off",
+						"useHookAtTopLevel": "off"
+					},
+					"a11y": {
+						"useAltText": "off"
+					}
+				}
+			}
+		}
+	]
+}
