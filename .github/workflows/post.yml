@@ -24,8 +24,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install node-fetch@2 @actions/core @actions/github
-          npm install -D @types/node @types/node-fetch typescript
+          npm install --legacy-peer-deps node-fetch@2 @actions/core @actions/github
+          npm install -D --legacy-peer-deps @types/node @types/node-fetch typescript
       
       - name: Build script
         run: npx tsc --project tsconfig.actions.json
