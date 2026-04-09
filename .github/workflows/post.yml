@@ -9,6 +9,11 @@ on:
 permissions:
   contents: read
 
+defaults:
+  run:
+    shell: bash
+    working-directory: .github
+
 jobs:
   post:
     runs-on: ubuntu-latest
@@ -28,7 +33,7 @@ jobs:
           npm install -D --legacy-peer-deps @types/node @types/node-fetch typescript
       
       - name: Build script
-        run: npx tsc --project tsconfig.actions.json
+        run: npx tsc --project ./actions/tsconfig.actions.json
 
       - name: Login wiki
         id: login
@@ -36,7 +41,7 @@ jobs:
           MW_USERNAME: ${{ secrets.MW_USERNAME }}
           MW_PASSWORD: ${{ secrets.MW_PASSWORD }}
           MW_API: ${{ secrets.MW_API }}
-        run: node .github/dist/login.js
+        run: node ./dist/login.js
       
       - name: Upload content
         env:
@@ -44,4 +49,4 @@ jobs:
           MW_CSRF_TOKEN: ${{ steps.login.outputs.token }}
           MW_COOKIE: ${{ steps.login.outputs.cookie }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node .github/dist/post.js
+        run: node ./dist/post.js
