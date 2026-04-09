@@ -41,7 +41,7 @@ jobs:
           MW_USERNAME: ${{ secrets.MW_USERNAME }}
           MW_PASSWORD: ${{ secrets.MW_PASSWORD }}
           MW_API: ${{ secrets.MW_API }}
-        run: node ./dist/login.js
+        run: node ./dist/actions/login.js
       
       - name: Upload content
         env:
@@ -49,4 +49,4 @@ jobs:
           MW_CSRF_TOKEN: ${{ steps.login.outputs.token }}
           MW_COOKIE: ${{ steps.login.outputs.cookie }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node ./dist/post.js
+        run: node ./dist/actions/post.js
