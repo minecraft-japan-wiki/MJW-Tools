@@ -41,7 +41,7 @@ const {
 	cdxIconLink,
 } = require("../icons.json")
 const ToolFieldBase = require("./FieldBase.vue")
-const { BannerPopup } = require("./BannerPopup.vue")
+const BannerPopup = require("./BannerPopup.vue")
 const Messages = require("./i18n.json")
 const api = new mw.Api()
 const loadedImageUrls = {}
