@@ -33,7 +33,7 @@ jobs:
           npm install -D --legacy-peer-deps @types/node @types/node-fetch typescript
       
       - name: Build script
-        run: npx tsc --project ./actions/tsconfig.actions.json
+        run: npx tsc --project ./tsconfig.actions.json
 
       - name: Login wiki
         id: login
