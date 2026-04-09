@@ -1,13 +1,10 @@
-import fetch from "node-fetch"
 import * as core from "@actions/core"
 import * as github from "@actions/github"
+import fetch from "node-fetch"
 
 const MW_API = process.env.MW_API;
 const MW_CSRF_TOKEN = process.env.MW_CSRF_TOKEN;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-
-const MW_TARGET_PAGE = process.env.MW_TARGET_PAGE;
-const GITHUB_TARGET_DIR = process.env.GITHUB_TARGET_DIR;
 const MW_COOKIE = process.env.MW_COOKIE
 
 /**
@@ -76,15 +73,34 @@ async function editPage(page: string, content: string) {
     return data
 }
 
+const AllTools = [
+    "time",
+    "energy",
+    "banner",
+    "seed",
+]
+
+const MwTargetDir = [
+    { src: "src/tools/FieldBase.vue", target: "MediaWiki:Gadget-MJWTools/FieldBase.vue" },
+    { src: "src/tools/i18n.json", target: "MediaWiki:Gadget-MJWTools/i18n.json" },
+    { src: "src/tools/main.js", target: "MediaWiki:Gadget-MJWTools.js" },
+
+    /* banner */
+    { src: "src/tools/banner/BannerPopup.vue", target: "MediaWiki:Gadget-MJWTools/BannerPopup.vue" },
+
+    ...AllTools.map((toolName) => {
+        return { src: `src/tools/${toolName}/App.vue`, target: `MediaWiki:Gadget-MJWTools/Tool-${toolName}.vue` }
+    })
+]
+
 async function main() {
-    try {
-        if (!(MW_TARGET_PAGE && GITHUB_TARGET_DIR)) {
-            throw Error("no env values.")
+    for (const c of MwTargetDir) {
+        try {
+            const content = await getContentFromRepos(c.src)
+            await editPage(c.target, content)
+        } catch (e) {
+            console.warn(e)
         }
-        const content = await getContentFromRepos(GITHUB_TARGET_DIR)
-        await editPage(MW_TARGET_PAGE, content)
-    } catch (e) {
-        console.warn(e)
     }
 }
 
