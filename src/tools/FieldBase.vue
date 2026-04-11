@@ -1,16 +1,10 @@
-<template>
-	<div class="mjw-tools-field-base">
-		<h2 v-if="slots.heading" class="cdx-label mjw-tools-label-heading">
-			<span class="cdx-label__label__text">
-				<slot name="heading">Tool</slot>
-			</span>
-		</h2>
-
-		<slot></slot>
-	</div>
-</template>
-
 <script>
+/**
+ * ToolFieldBase
+ *
+ * [[Category:ガジェット/MJWTools]]
+ * <nowiki>
+ */
 const { useSlots, defineComponent } = require("vue")
 
 module.exports = defineComponent({
@@ -23,6 +17,18 @@ module.exports = defineComponent({
 	},
 })
 </script>
+
+<template>
+	<div class="mjw-tools-field-base">
+		<h2 v-if="slots.heading" class="cdx-label mjw-tools-label-heading">
+			<span class="cdx-label__label__text">
+				<slot name="heading">Tool</slot>
+			</span>
+		</h2>
+
+		<slot></slot>
+	</div>
+</template>
 
 <style>
 .mjw-tools-field-base {
