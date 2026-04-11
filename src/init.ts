@@ -7,6 +7,7 @@ import BannerPopup from "./tools/banner/BannerPopup.test.vue"
 import FieldBase from "./tools/FieldBase.test.vue"
 import i18n from "./tools/i18n.json"
 import "./common.css"
+import "./sprite.css"
 
 window.require = (mod) => {
     const registry = {
