@@ -13,3 +13,24 @@
     image-rendering: pixelated;
     -ms-interpolation-mode: nearest-neighbor;
 }
+
+/* Sprite */
+.sprite {
+    display: inline-block;
+    vertical-align: middle;
+    height: 16px;
+    width: 16px;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+}
+
+.inv-sprite,
+.slot-sprite {
+    height: 32px;
+    width: 32px;
+}
+
+.slot-sprite {
+    background-image: url(https://static.wikitide.net/minecraftjapanwiki/f/f2/SlotSprite.png);
+}

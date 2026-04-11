@@ -5,6 +5,9 @@
  * Licensed under
  * Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
  * https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+ *
+ * [[Category:ガジェット/MJWTools]]
+ * <nowiki>
  */
 console.log("[MJW Tools] Loaded component: energy")
 const { computed, ref, defineComponent } = require("vue")
