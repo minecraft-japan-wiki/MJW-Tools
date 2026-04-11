@@ -1,10 +1,4 @@
 <script>
-/**
- * BannerPopup
- *
- * [[Category:ガジェット/MJWTools]]
- * <nowiki>
- */
 const { CdxButton, CdxIcon, CdxPopover } = require("@wikimedia/codex")
 const { ref, useTemplateRef, defineComponent, useSlots } = require("vue")
 

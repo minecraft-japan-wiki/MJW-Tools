@@ -1,10 +1,4 @@
 <script>
-/**
- * ToolFieldBase
- *
- * [[Category:ガジェット/MJWTools]]
- * <nowiki>
- */
 const { useSlots, defineComponent } = require("vue")
 
 module.exports = defineComponent({
