@@ -81,6 +81,7 @@ const AllTools = [
 ]
 
 const MwTargetDir = [
+    { src: "src/lua/MJWTools.lua", target: "Module:MJWTools" },
     { src: "src/tools/FieldBase.vue", target: "MediaWiki:Gadget-MJWTools/FieldBase.vue" },
     { src: "src/tools/i18n.json", target: "MediaWiki:Gadget-MJWTools/i18n.json" },
     { src: "src/tools/main.js", target: "MediaWiki:Gadget-MJWTools.js" },

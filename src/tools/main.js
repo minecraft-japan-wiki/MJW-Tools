@@ -30,6 +30,7 @@
         const toolVue = require(`./MJWTools/Tool-${toolName.trim()}.vue`);
 
         const VueApp = Vue.createMwApp(toolVue, {});
+        tool.innerHTML = ""
         VueApp.mount(tool.appendChild(document.createElement('div')));
     });
 })();
